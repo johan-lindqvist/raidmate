@@ -1,0 +1,19 @@
+{
+    "author": {
+      "name": "raidmate",
+      "url": "https://github.com/johan-lindqvist/raidmate"
+    },
+    "cacheDirectories": [
+      "node_modules"
+    ],
+    "devDependencies": {
+      "prettier": "2.8.8"
+    },
+    "license": "",
+    "name": "raidmate",
+    "private": true,
+    "repository": "https://github.com/johan-lindqvist/raidmate",
+    "scripts": {
+      "prettier": "prettier -w \"**/*.{yml,yaml}\""
+    }
+  }
