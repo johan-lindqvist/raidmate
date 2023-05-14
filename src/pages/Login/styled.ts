@@ -7,7 +7,7 @@ export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, ${theme.colors.blue[50]}, ${theme.colors.blue[100]});
+  background: linear-gradient(45deg, ${theme.colors.blue[50]}, ${theme.colors.blue[200]});
 `;
 
 export const Container = styled.div`
