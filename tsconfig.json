@@ -23,7 +23,8 @@
     "baseUrl": ".",
     "paths": {
       "domains/*": ["./src/domains/*"],
-      "pages/*": ["./src/pages/*"]
+      "pages/*": ["./src/pages/*"],
+      "theme": ["./src/theme"],
     }
   },
   "include": ["src"],

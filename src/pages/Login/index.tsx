@@ -1,5 +1,7 @@
 import { useConfig } from 'domains/config';
 
+import { Background, BattlenetLink, Container } from './styled';
+
 export function LoginPage() {
   const { blizzard } = useConfig();
 
@@ -12,8 +14,10 @@ export function LoginPage() {
   blizzardUrl.searchParams.append('response_type', blizzard.responseType);
 
   return (
-    <div>
-      <a href={blizzardUrl.toString()}>Blizzard Login</a>
-    </div>
+    <Background>
+      <Container>
+        <BattlenetLink href={blizzardUrl.toString()}>Log in with Battle.Net</BattlenetLink>
+      </Container>
+    </Background>
   );
 }
