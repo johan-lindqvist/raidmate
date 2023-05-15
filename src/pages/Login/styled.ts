@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from 'theme';
 
 export const Background = styled.div`
   width: 100%;
@@ -7,36 +6,40 @@ export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, ${theme.colors.blue[50]}, ${theme.colors.blue[200]});
+  background: linear-gradient(
+    45deg,
+    ${(props) => props.theme.colors.blue[50]},
+    ${(props) => props.theme.colors.blue[200]}
+  );
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${theme.spacing.xl};
+  gap: ${(props) => props.theme.spacing.xl};
 `;
 
 export const BattlenetLink = styled.a`
   text-decoration: none;
   outline: none;
 
-  color: ${theme.colors.text.light};
-  font-size: ${theme.fontSize.paragraph};
-  font-weight: ${theme.fontWeight.bold};
+  color: ${(props) => props.theme.colors.text.light};
+  font-size: ${(props) => props.theme.fontSize.paragraph};
+  font-weight: ${(props) => props.theme.fontWeight.bold};
 
-  padding: ${theme.spacing.lg};
+  padding: ${(props) => props.theme.spacing.lg};
 
-  border-radius: ${theme.spacing.md};
-  border: 2px solid ${theme.colors.battlenet.blue};
-  background-color: ${theme.colors.battlenet.blue};
+  border-radius: ${(props) => props.theme.spacing.md};
+  border: 2px solid ${(props) => props.theme.colors.battlenet.blue};
+  background-color: ${(props) => props.theme.colors.battlenet.blue};
 
-  transition: ${theme.transition('fast', 'background-color', 'border')};
+  transition: ${(props) => props.theme.transition('fast', 'background-color', 'border')};
 
   &:hover {
-    border: 2px solid ${theme.colors.battlenet.blueLight};
+    border: 2px solid ${(props) => props.theme.colors.battlenet.blueLight};
   }
 
   &:active {
-    background-color: ${theme.colors.battlenet.blueDark};
+    background-color: ${(props) => props.theme.colors.battlenet.blueDark};
   }
 `;

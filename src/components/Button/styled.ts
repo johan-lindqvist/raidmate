@@ -1,17 +1,16 @@
 import styled from 'styled-components';
-import { theme } from 'theme';
 
 const Base = styled.button`
-  padding: ${theme.spacing.lg};
+  padding: ${(props) => props.theme.spacing.lg};
 
-  font-size: ${theme.fontSize.paragraph};
-  font-weight: ${theme.fontWeight.normal};
+  font-size: ${(props) => props.theme.fontSize.paragraph};
+  font-weight: ${(props) => props.theme.fontWeight.normal};
 
-  border-radius: ${theme.spacing.md};
+  border-radius: ${(props) => props.theme.spacing.md};
 
-  color: ${theme.colors.blue[600]};
+  color: ${(props) => props.theme.colors.blue[600]};
 
-  transition: ${theme.transition('fast', 'all')};
+  transition: ${(props) => props.theme.transition('fast', 'all')};
 
   &:not(:disabled) {
     cursor: pointer;
@@ -19,29 +18,29 @@ const Base = styled.button`
 `;
 
 export const SecondaryButton = styled(Base)`
-  border: 1px solid ${theme.colors.blue[400]};
+  border: 1px solid ${(props) => props.theme.colors.blue[400]};
   background-color: transparent;
 
   &:hover {
-    border: 1px solid ${theme.colors.blue[500]};
+    border: 1px solid ${(props) => props.theme.colors.blue[500]};
   }
 
   &:active {
-    background-color: ${theme.colors.blue[50]};
+    background-color: ${(props) => props.theme.colors.blue[50]};
   }
 `;
 
 export const PrimaryButton = styled(Base)`
-  color: ${theme.colors.text.light};
-  border: 1px solid ${theme.colors.blue[400]};
-  background-color: ${theme.colors.blue[400]};
+  color: ${(props) => props.theme.colors.text.light};
+  border: 1px solid ${(props) => props.theme.colors.blue[400]};
+  background-color: ${(props) => props.theme.colors.blue[400]};
 
   &:hover {
-    border: 1px solid ${theme.colors.blue[500]};
-    background-color: ${theme.colors.blue[500]};
+    border: 1px solid ${(props) => props.theme.colors.blue[500]};
+    background-color: ${(props) => props.theme.colors.blue[500]};
   }
 
   &:active {
-    background-color: ${theme.colors.blue[300]};
+    background-color: ${(props) => props.theme.colors.blue[300]};
   }
 `;
