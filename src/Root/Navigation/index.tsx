@@ -1,15 +1,17 @@
-import { Grid } from 'react-feather';
+import { Clipboard, Grid, Settings, Table } from 'react-feather';
 
-import { Sidebar, SidebarItem } from 'src/components';
+import { Sidebar, SidebarItem, SidebarList, SidebarLogo } from 'src/components';
 
 export function Navigation() {
-  const handleClick = () => {
-    console.log('click');
-  };
-
   return (
     <Sidebar>
-      <SidebarItem icon={Grid} label="Dashboard" onClick={handleClick} />
+      <SidebarLogo />
+      <SidebarList>
+        <SidebarItem to="/dashboard" icon={Grid} label="Dashboard" />
+        <SidebarItem to="/summaries" icon={Table} label="Summaries" />
+        <SidebarItem to="/loot-sheets" icon={Clipboard} label="Loot sheets" />
+        <SidebarItem to="/settings" icon={Settings} label="Settings" />
+      </SidebarList>
     </Sidebar>
   );
 }

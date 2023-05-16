@@ -57,6 +57,7 @@ export const theme = {
     md: '8px',
     lg: '16px',
     xl: '32px',
+    xxl: '48px',
   },
   fontWeight: {
     light: 300,

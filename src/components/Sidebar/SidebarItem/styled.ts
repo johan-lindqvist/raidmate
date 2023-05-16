@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { ItemProps } from './types';
 
 export const ItemIcon = styled.div`
   width: 40px;
@@ -10,7 +12,7 @@ export const ItemIcon = styled.div`
   transition: ${(props) => props.theme.transition('fast', 'color')};
 `;
 
-export const Item = styled.div`
+export const Item = styled.div<ItemProps>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -18,8 +20,22 @@ export const Item = styled.div`
   color: ${(props) => props.theme.colors.text.light};
   gap: ${(props) => props.theme.spacing.md};
   padding: ${(props) => props.theme.spacing.md};
+  border-radius: ${(props) => props.theme.spacing.lg};
+  background-color: ${(props) => props.theme.colors.blue[100]};
+  transition: ${(props) => props.theme.transition('fast', 'background-color')};
 
-  &:hover ${ItemIcon} {
-    color: ${(props) => props.theme.colors.orange[500]};
+  &:hover {
+    background-color: ${(props) => !props.$active && props.theme.colors.blue[200]};
   }
+
+  ${(props) =>
+    props.$active &&
+    css`
+      color: ${(props) => props.theme.colors.blue[100]};
+      background-color: ${(props) => props.theme.colors.blue[600]};
+
+      ${ItemIcon} {
+        color: inherit;
+      }
+    `}
 `;

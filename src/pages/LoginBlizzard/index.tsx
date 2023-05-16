@@ -6,5 +6,5 @@ export function LoginBlizzardPage() {
   const code = searchParams.get('code');
   const state = searchParams.get('state');
 
-  return <Navigate replace to={`/guilds?code=${code}&state=${state}`} />;
+  return <Navigate replace to={`/dashboard?code=${code}&state=${state}`} />;
 }
