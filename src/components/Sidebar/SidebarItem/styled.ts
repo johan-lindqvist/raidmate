@@ -32,7 +32,7 @@ export const Item = styled.div<ItemProps>`
     props.$active &&
     css`
       color: ${(props) => props.theme.colors.blue[100]};
-      background-color: ${(props) => props.theme.colors.blue[600]};
+      background-color: ${(props) => props.theme.colors.blue[500]};
 
       ${ItemIcon} {
         color: inherit;
