@@ -1,8 +1,8 @@
-import { Icon as FeatherIcon } from 'react-feather';
+import { ReactFeatherIcon } from 'src/components';
 
 export interface SidebarItemProps {
   to: string;
-  icon: FeatherIcon;
+  icon: ReactFeatherIcon;
   label: string;
 }
 

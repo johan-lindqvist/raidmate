@@ -2,10 +2,10 @@ import { Text } from './styled';
 import { TypographyProps } from './types';
 
 export function Typography(props: TypographyProps) {
-  const { children, size = 'paragraph', weight = 'normal' } = props;
+  const { children, wowColor, size = 'paragraph', weight = 'normal', ...rest } = props;
 
   return (
-    <Text $size={size} $weight={weight}>
+    <Text $size={size} $weight={weight} $wowColor={wowColor} {...rest}>
       {children}
     </Text>
   );

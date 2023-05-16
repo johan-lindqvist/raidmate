@@ -31,7 +31,7 @@ export const SecondaryButton = styled(Base)`
 `;
 
 export const PrimaryButton = styled(Base)`
-  color: ${(props) => props.theme.colors.text.light};
+  color: ${(props) => props.theme.colors.text[1000]};
   border: 1px solid ${(props) => props.theme.colors.blue[400]};
   background-color: ${(props) => props.theme.colors.blue[400]};
 

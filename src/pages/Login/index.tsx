@@ -1,7 +1,6 @@
 import { useConfig } from 'domains/config';
 
 import { Background, BattlenetLink, Container } from './styled';
-import { Button } from 'src/components';
 
 export function LoginPage() {
   const { blizzard } = useConfig();
@@ -17,8 +16,6 @@ export function LoginPage() {
   return (
     <Background>
       <Container>
-        <Button primary>Primary button</Button>
-        <Button>Secondary button</Button>
         <BattlenetLink href={blizzardUrl.toString()}>Log in with Battle.Net</BattlenetLink>
       </Container>
     </Background>

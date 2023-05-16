@@ -22,6 +22,7 @@
     /* Absolute imports */
     "baseUrl": ".",
     "paths": {
+      "components": ["./src/components"],
       "domains/*": ["./src/domains/*"],
       "pages/*": ["./src/pages/*"],
       "theme": ["./src/theme"],

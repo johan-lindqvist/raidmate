@@ -17,7 +17,7 @@ export const Item = styled.div<ItemProps>`
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: ${(props) => props.theme.colors.text.light};
+  color: ${(props) => props.theme.colors.text[1000]};
   gap: ${(props) => props.theme.spacing.md};
   padding: ${(props) => props.theme.spacing.md};
   border-radius: ${(props) => props.theme.spacing.lg};

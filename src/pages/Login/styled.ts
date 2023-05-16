@@ -23,7 +23,7 @@ export const BattlenetLink = styled.a`
   text-decoration: none;
   outline: none;
 
-  color: ${(props) => props.theme.colors.text.light};
+  color: ${(props) => props.theme.colors.text[1000]};
   font-size: ${(props) => props.theme.fontSize.paragraph};
   font-weight: ${(props) => props.theme.fontWeight.bold};
 

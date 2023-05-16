@@ -3,7 +3,9 @@ import { createTransition } from './utils';
 export const theme = {
   colors: {
     text: {
-      light: '#FFFFFF',
+      '1000': '#FFFFFF',
+      '900': '#0A9396',
+      '800': '#005F73',
     },
     blue: {
       '50': '#00090D',
@@ -73,5 +75,7 @@ export const theme = {
   },
   transition: createTransition,
 } as const;
+
+export type WowColorKey = keyof RaidmateTheme['colors']['wow'];
 
 export type RaidmateTheme = typeof theme;
