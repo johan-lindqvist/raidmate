@@ -1,3 +1,12 @@
+import { Typography } from 'components';
+import { useAuth } from 'domains/auth';
+
 export function DashboardPage() {
-  return <div>Dashboard</div>;
+  const { code } = useAuth();
+
+  return (
+    <div>
+      <Typography wowColor="alliance">{code}</Typography>
+    </div>
+  );
 }

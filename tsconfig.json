@@ -22,10 +22,12 @@
     /* Absolute imports */
     "baseUrl": ".",
     "paths": {
+      "app-constants": ["./src/app-constants"],
       "components": ["./src/components"],
       "domains/*": ["./src/domains/*"],
       "pages/*": ["./src/pages/*"],
       "theme": ["./src/theme"],
+      "types": ["./src/types"],
     }
   },
   "include": ["src"],

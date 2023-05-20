@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 const Base = styled.button`
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+
   padding: ${(props) => props.theme.spacing.lg};
 
   font-size: ${(props) => props.theme.fontSize.paragraph};
@@ -15,32 +20,38 @@ const Base = styled.button`
   &:not(:disabled) {
     cursor: pointer;
   }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const SecondaryButton = styled(Base)`
-  border: 1px solid ${(props) => props.theme.colors.blue[400]};
   background-color: transparent;
+  outline: none;
+  border: none;
 
   &:hover {
-    border: 1px solid ${(props) => props.theme.colors.blue[500]};
+    background-color: ${(props) => props.theme.colors.blue[100]};
   }
 
-  &:active {
-    background-color: ${(props) => props.theme.colors.blue[50]};
+  &:focus {
+    outline: 1px solid ${(props) => props.theme.colors.blue[200]};
   }
 `;
 
 export const PrimaryButton = styled(Base)`
   color: ${(props) => props.theme.colors.text[1000]};
-  border: 1px solid ${(props) => props.theme.colors.blue[400]};
+  outline: 1px solid ${(props) => props.theme.colors.blue[400]};
   background-color: ${(props) => props.theme.colors.blue[400]};
 
   &:hover {
-    border: 1px solid ${(props) => props.theme.colors.blue[500]};
+    outline: 1px solid ${(props) => props.theme.colors.blue[500]};
     background-color: ${(props) => props.theme.colors.blue[500]};
   }
 
-  &:active {
+  &:focus {
     background-color: ${(props) => props.theme.colors.blue[300]};
   }
 `;

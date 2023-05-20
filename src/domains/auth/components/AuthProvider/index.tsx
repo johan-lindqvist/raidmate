@@ -19,7 +19,7 @@ export function AuthProvider(props: AuthProviderProps) {
   const codeParam = searchParams.get('code');
   const stateParam = searchParams.get('state');
 
-  const navigateToLogin = useCallback(() => navigate('/', { replace: true }), [navigate]);
+  const navigateToLogin = useCallback(() => navigate('/login', { replace: true }), [navigate]);
 
   const request = useCallback(
     async (code: string) => {

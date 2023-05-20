@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { ComponentProps } from '../types';
 
-export interface ButtonProps extends ComponentProps {
+export interface ButtonProps extends ComponentProps<'button'> {
   children: ReactNode;
   primary?: boolean;
 }

@@ -1,25 +1,32 @@
 import { createBrowserRouter } from 'react-router-dom';
 
+import { routes } from 'app-constants';
 import { LoginPage } from 'pages/Login';
+import { NotFoundPage } from 'pages/404';
 import { DashboardPage } from 'pages/Dashboard';
 import { SummariesPage } from 'pages/Summaries';
 import { LootSheetsPage } from 'pages/LootSheets';
 import { SettingsPage } from 'pages/Settings';
-import { NotFoundPage } from 'pages/404';
+import { GuildsPage } from 'pages/Guilds';
 import { LoginBlizzardPage } from 'pages/LoginBlizzard';
 
 import { Root } from './Root';
+import { LogoutPage } from 'pages/Logout';
 
 export const router = createBrowserRouter([
-  { path: '/', element: <LoginPage />, errorElement: <NotFoundPage /> },
-  { path: '/blizzard-login', element: <LoginBlizzardPage /> },
   {
+    path: routes.root,
     element: <Root />,
+    errorElement: <NotFoundPage />,
     children: [
-      { path: '/dashboard', element: <DashboardPage /> },
-      { path: '/summaries', element: <SummariesPage /> },
-      { path: '/loot-sheets', element: <LootSheetsPage /> },
-      { path: '/settings', element: <SettingsPage /> },
+      { path: routes.login, element: <LoginPage /> },
+      { path: routes.logout, element: <LogoutPage /> },
+      { path: routes.blizzardRedirect, element: <LoginBlizzardPage /> },
+      { path: routes.dashboard, element: <DashboardPage /> },
+      { path: routes.summaries, element: <SummariesPage /> },
+      { path: routes.lootsheets, element: <LootSheetsPage /> },
+      { path: routes.settings, element: <SettingsPage /> },
+      { path: routes.guilds, element: <GuildsPage /> },
     ],
   },
 ]);

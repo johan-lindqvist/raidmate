@@ -15,10 +15,12 @@ export default defineConfig({
   resolve: {
     alias: {
       src: '/src',
+      'app-constants': '/src/app-constants',
       components: '/src/components',
       domains: '/src/domains',
       pages: '/src/pages',
       theme: '/src/theme',
+      types: '/src/types',
     },
   },
 });

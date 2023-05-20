@@ -7,7 +7,7 @@ import { ComponentProps } from '../types';
 type SizeProp = keyof RaidmateTheme['fontSize'];
 type WeightProp = keyof RaidmateTheme['fontWeight'];
 
-export interface TypographyProps extends ComponentProps {
+export interface TypographyProps extends ComponentProps<'span'> {
   children: ReactNode;
   size?: SizeProp;
   weight?: WeightProp;
