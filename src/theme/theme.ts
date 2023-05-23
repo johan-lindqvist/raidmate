@@ -1,4 +1,4 @@
-import { createTransition } from './utils';
+import { createAnimateIn, createTransition } from './utils';
 
 export const theme = {
   colors: {
@@ -74,6 +74,7 @@ export const theme = {
     h1: '36px',
   },
   transition: createTransition,
+  animateIn: createAnimateIn,
 } as const;
 
 export type WowColorKey = keyof RaidmateTheme['colors']['wow'];
