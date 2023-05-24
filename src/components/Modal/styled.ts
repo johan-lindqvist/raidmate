@@ -9,7 +9,7 @@ const overlayAnimation = keyframes`
   
   100% {
     opacity: 1;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(1.5px);
   }
 `;
 
@@ -44,8 +44,8 @@ export const ModalContainer = styled.div`
 export const ModalOverlay = styled.div`
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(1px);
-  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1.5px);
+  background-color: rgba(0, 0, 0, 0.65);
   animation: ${(props) => props.theme.animateIn(overlayAnimation, 'normal')};
 `;
 
@@ -68,6 +68,7 @@ export const ModalHeader = styled.div`
 export const ModalBody = styled.div`
   display: flex;
   flex-direction: column;
+  gap: ${(props) => props.theme.spacing.lg};
   padding: ${(props) => props.theme.spacing.xl};
 `;
 

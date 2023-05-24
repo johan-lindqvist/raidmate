@@ -1,6 +1,6 @@
-import { SelectOption } from '../types.ts';
+import { Option } from '../types.ts';
 
 export interface SelectOptionProps<T> {
-  option: SelectOption<T>;
-  onClick: (value: T, option: SelectOption<T>) => void;
+  option: Option<T>;
+  onClick: (value: T, option: Option<T>) => void;
 }

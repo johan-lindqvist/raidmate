@@ -4,3 +4,4 @@ export * from './IconButton';
 export * from './Modal';
 export * from './Select';
 export * from './Typography';
+export * from './hooks';
