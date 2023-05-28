@@ -1,8 +1,10 @@
-import { SelectOptionProps } from './types.ts';
 import { MouseEvent } from 'react';
 
-export function SelectOption<T>(props: SelectOptionProps<T>) {
-  const { option, onClick } = props;
+import { SelectOptionProps } from './types.ts';
+import { OptionContainer } from './styled.ts';
+
+export function SelectOption(props: SelectOptionProps) {
+  const { option, selected = false, onClick } = props;
   const { value, label } = option;
 
   const handleClick = (event: MouseEvent) => {
@@ -12,5 +14,9 @@ export function SelectOption<T>(props: SelectOptionProps<T>) {
     onClick(value, option);
   };
 
-  return <div onClick={handleClick}>{label}</div>;
+  return (
+    <OptionContainer $selected={selected} onClick={handleClick}>
+      {label}
+    </OptionContainer>
+  );
 }

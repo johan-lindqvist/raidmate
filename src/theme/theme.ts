@@ -68,6 +68,7 @@ export const theme = {
   },
   fontSize: {
     detail: '14px',
+    input: '15px',
     paragraph: '16px',
     h3: '18px',
     h2: '24px',

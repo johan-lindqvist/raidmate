@@ -1,6 +1,11 @@
 import { Option } from '../types.ts';
 
-export interface SelectOptionProps<T> {
-  option: Option<T>;
-  onClick: (value: T, option: Option<T>) => void;
+export interface SelectOptionProps {
+  option: Option;
+  selected?: boolean;
+  onClick: (value: string, option: Option) => void;
+}
+
+export interface OptionContainerProps {
+  $selected: boolean;
 }

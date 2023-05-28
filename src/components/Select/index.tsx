@@ -1,52 +1,59 @@
 import { useRef, useState } from 'react';
+import { v4 } from 'uuid';
 
-import { FeatherIcon, useBlur, useFocus } from 'components';
+import { FeatherIcon, FieldContainer, FieldLabel, useBlur } from 'components';
 
 import { SelectOption } from './SelectOption';
 import { SelectProps, Option } from './types.ts';
-import {
-  SelectContainer,
-  SelectDropdown,
-  SelectIcon,
-  SelectTexts,
-  SelectTextsLabel,
-  SelectTextsValue,
-} from './styled.ts';
+import { SelectContainer, SelectDropdown, SelectIcon, SelectText, StyledSelect } from './styled.ts';
 
-export function Select<T extends string | number>(props: SelectProps<T>) {
-  const { value, label, options, disabled = false, onChange } = props;
+export function Select(props: SelectProps) {
+  const { value, label, placeholder, options, onChange, ...rest } = props;
+  const id = `select-${v4()}`;
+
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const selectRef = useRef<HTMLButtonElement | null>(null);
+
   const selectedOption = options.find((option) => option.value === value);
   const hasValue = Boolean(selectedOption);
 
-  useBlur(containerRef, () => {
+  useBlur(selectRef, () => {
     setOpen(false);
   });
 
-  const focused = useFocus(containerRef, () => {
-    setOpen((value) => !value);
-  });
+  const handleClick = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
 
-  const handleOptionClick = (value: T, option: Option<T>) => {
+  const handleOptionClick = (value: string, option: Option) => {
     onChange(value, option);
     setOpen(false);
   };
 
   return (
-    <SelectContainer $open={open} $focused={focused} $disabled={disabled} $hasValue={hasValue} ref={containerRef}>
-      <SelectTexts>
-        <SelectTextsLabel>{label}</SelectTextsLabel>
-        {selectedOption && <SelectTextsValue>{selectedOption.label}</SelectTextsValue>}
-      </SelectTexts>
-      <SelectIcon>
-        <FeatherIcon icon="ChevronDown" />
-      </SelectIcon>
-      <SelectDropdown>
-        {options.map((option) => (
-          <SelectOption key={option.value} option={option} onClick={handleOptionClick} />
-        ))}
-      </SelectDropdown>
-    </SelectContainer>
+    <FieldContainer>
+      <FieldLabel>{label}</FieldLabel>
+      <StyledSelect id={id} ref={selectRef} onClick={handleClick} {...rest} />
+      <label htmlFor={id}>
+        <SelectContainer $open={open} $hasValue={hasValue}>
+          <SelectText>{selectedOption ? selectedOption.label : placeholder}</SelectText>
+          <SelectIcon>
+            <FeatherIcon icon="ChevronDown" />
+          </SelectIcon>
+          {open && (
+            <SelectDropdown>
+              {options.map((option) => (
+                <SelectOption
+                  key={option.value}
+                  option={option}
+                  selected={option.value === value}
+                  onClick={handleOptionClick}
+                />
+              ))}
+            </SelectDropdown>
+          )}
+        </SelectContainer>
+      </label>
+    </FieldContainer>
   );
 }

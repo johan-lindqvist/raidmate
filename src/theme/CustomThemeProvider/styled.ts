@@ -12,4 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: 'Open Sans', sans-serif;
   }
+  
+  button, input {
+    font-family: 'Open Sans', sans-serif;
+  }
 `;

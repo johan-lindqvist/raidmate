@@ -1,19 +1,19 @@
-export interface Option<T> {
-  value: T;
+import { ComponentProps } from 'components';
+
+export interface Option {
+  value: string;
   label: string;
 }
 
-export interface SelectProps<T> {
+export interface SelectProps extends Omit<ComponentProps<'button'>, 'onChange'> {
   value: string;
   label: string;
-  options: Option<T>[];
-  disabled?: boolean;
-  onChange: (value: T, option: Option<T>) => void;
+  placeholder: string;
+  options: Option[];
+  onChange: (value: string, option: Option) => void;
 }
 
 export interface SelectContainerProps {
   $open: boolean;
-  $focused: boolean;
-  $disabled: boolean;
   $hasValue: boolean;
 }

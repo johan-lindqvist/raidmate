@@ -1,22 +1,34 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { regions } from 'app-constants';
-import { Button, Modal, Select } from 'components';
+import { Button, Modal, Select, TextField } from 'components';
 
 import { Container } from './styled.ts';
 
 export function GuildsPage() {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
   const [selectedRegionId, setSelectedRegionId] = useState('');
+  const [selectedServerId, setSelectedServerId] = useState('');
+  const [guildName, setGuildName] = useState('');
 
   const handleShowModal = () => setShowModal(true);
   const handleHideModal = () => setShowModal(false);
-  const handleSelectChange = (value: string) => setSelectedRegionId(value);
+  const handleSelectRegion = (regionId: string) => setSelectedRegionId(regionId);
+  const handleSelectServer = (serverId: string) => setSelectedServerId(serverId);
+  const handleChangeGuildName = (event: ChangeEvent<HTMLInputElement>) => setGuildName(event.target.value);
 
-  const options = Object.values(regions).map((region) => ({
+  const handleClearForm = () => {
+    setSelectedRegionId('');
+    setSelectedServerId('');
+    setGuildName('');
+  };
+
+  const regionOptions = Object.values(regions).map((region) => ({
     value: region.id,
     label: region.label,
   }));
+
+  const serverOptions = [{ value: '', label: '' }];
 
   return (
     <Container>
@@ -24,14 +36,24 @@ export function GuildsPage() {
         Add guild
       </Button>
       <Modal show={showModal} title="Add guild" onClose={handleHideModal}>
-        <Select label="Select region" value={selectedRegionId} options={options} onChange={handleSelectChange} />
+        <Button primary onClick={handleClearForm}>
+          Clear
+        </Button>
         <Select
-          disabled
-          label="Select region"
+          label="Region"
+          placeholder="Select region"
           value={selectedRegionId}
-          options={options}
-          onChange={handleSelectChange}
+          options={regionOptions}
+          onChange={handleSelectRegion}
         />
+        <Select
+          label="Server"
+          placeholder="Select server"
+          value={selectedServerId}
+          options={serverOptions}
+          onChange={handleSelectServer}
+        />
+        <TextField label="Guild" placeholder="Enter guild name" value={guildName} onChange={handleChangeGuildName} />
       </Modal>
     </Container>
   );
