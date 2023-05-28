@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 
-import { regions } from 'app-constants';
+import { regions, realms } from 'app-constants';
 import { Button, Modal, Select, TextField } from 'components';
 
 import { Container } from './styled.ts';
@@ -28,7 +28,10 @@ export function GuildsPage() {
     label: region.label,
   }));
 
-  const serverOptions = [{ value: '', label: '' }];
+  const realmOptions = realms.map((realm) => ({
+    value: realm.id,
+    label: realm.label,
+  }));
 
   return (
     <Container>
@@ -47,10 +50,10 @@ export function GuildsPage() {
           onChange={handleSelectRegion}
         />
         <Select
-          label="Server"
-          placeholder="Select server"
+          label="Realm"
+          placeholder="Select realm"
           value={selectedServerId}
-          options={serverOptions}
+          options={realmOptions}
           onChange={handleSelectServer}
         />
         <TextField label="Guild" placeholder="Enter guild name" value={guildName} onChange={handleChangeGuildName} />
