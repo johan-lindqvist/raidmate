@@ -4,8 +4,7 @@ import { useEventListener } from 'usehooks-ts';
 export const useBlur = <T extends HTMLElement>(ref: MutableRefObject<T | null>, callback: () => void) => {
   const [blurred, setBlurred] = useState(true);
 
-  const onClick = (event: MouseEvent) => {
-    const target = event.target;
+  const checkBlur = (target: EventTarget | null) => {
     const reference = ref.current;
 
     if (!reference) {
@@ -20,7 +19,11 @@ export const useBlur = <T extends HTMLElement>(ref: MutableRefObject<T | null>, 
     }
   };
 
+  const onClick = (event: MouseEvent) => checkBlur(event.target);
+  const onKeyup = (event: KeyboardEvent) => checkBlur(event.target);
+
   useEventListener('click', onClick);
+  useEventListener('keyup', onKeyup);
 
   return blurred;
 };

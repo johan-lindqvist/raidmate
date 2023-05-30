@@ -36,7 +36,8 @@ export const SelectContainer = styled.div<SelectContainerProps>`
   height: 54px;
   cursor: pointer;
   width: 100%;
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: -1px;
   border: 2px solid transparent;
   font-size: ${(props) => props.theme.fontSize.input};
   padding: ${(props) => props.theme.spacing.lg};
@@ -79,7 +80,7 @@ export const SelectDropdown = styled.div`
   animation: ${(props) => props.theme.animateIn(dropdownAnimation, 'fast')};
 `;
 
-export const StyledSelect = styled.button`
+export const StyledButton = styled.button`
   border-width: 0 !important;
   outline-width: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -91,11 +92,11 @@ export const StyledSelect = styled.button`
   width: 1px !important;
   opacity: 0 !important;
 
-  &:hover + label ${SelectContainer}, &:focus-visible + label ${SelectContainer} {
+  &:hover + label ${SelectContainer} {
     border: 2px solid ${(props) => props.theme.colors.blue[500]};
   }
 
-  &:focus-visible {
-    outline: 0 !important;
+  &:focus + label ${SelectContainer} {
+    outline: 2px solid ${(props) => props.theme.colors.blue[500]};
   }
 `;

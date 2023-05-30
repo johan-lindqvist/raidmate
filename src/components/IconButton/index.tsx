@@ -1,13 +1,14 @@
-import { Button, FeatherIcon } from 'components';
+import { FeatherIcon } from 'components';
 
 import { IconButtonProps } from './types';
+import { StyledButton } from './styled.ts';
 
 export function IconButton(props: IconButtonProps) {
-  const { icon, primary, ...rest } = props;
+  const { icon, ...rest } = props;
 
   return (
-    <Button primary={primary} {...rest}>
+    <StyledButton {...rest}>
       <FeatherIcon icon={icon} />
-    </Button>
+    </StyledButton>
   );
 }

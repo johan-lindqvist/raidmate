@@ -5,7 +5,7 @@ import { FeatherIcon, FieldContainer, FieldLabel, useBlur } from 'components';
 
 import { SelectOption } from './SelectOption';
 import { SelectProps, Option } from './types.ts';
-import { SelectContainer, SelectDropdown, SelectIcon, SelectText, StyledSelect } from './styled.ts';
+import { SelectContainer, SelectDropdown, SelectIcon, SelectText, StyledButton } from './styled.ts';
 
 export function Select(props: SelectProps) {
   const { value, label, placeholder, options, onChange, ...rest } = props;
@@ -33,7 +33,7 @@ export function Select(props: SelectProps) {
   return (
     <FieldContainer>
       <FieldLabel>{label}</FieldLabel>
-      <StyledSelect id={id} ref={selectRef} onClick={handleClick} {...rest} />
+      <StyledButton id={id} ref={selectRef} onClick={handleClick} {...rest} />
       <label htmlFor={id}>
         <SelectContainer $open={open} $hasValue={hasValue}>
           <SelectText>{selectedOption ? selectedOption.label : placeholder}</SelectText>

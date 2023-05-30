@@ -4,8 +4,7 @@ import { useEventListener } from 'usehooks-ts';
 export const useFocus = <T extends HTMLElement>(ref: MutableRefObject<T | null>, callback: () => void) => {
   const [focused, setFocused] = useState(false);
 
-  const onClick = (event: MouseEvent) => {
-    const target = event.target;
+  const checkFocus = (target: EventTarget | null) => {
     const reference = ref.current;
 
     if (!reference) {
@@ -20,7 +19,11 @@ export const useFocus = <T extends HTMLElement>(ref: MutableRefObject<T | null>,
     }
   };
 
+  const onClick = (event: MouseEvent) => checkFocus(event.target);
+  const onKeyup = (event: KeyboardEvent) => checkFocus(event.target);
+
   useEventListener('click', onClick);
+  useEventListener('keyup', onKeyup);
 
   return focused;
 };

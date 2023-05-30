@@ -52,6 +52,7 @@ export const ModalOverlay = styled.div`
 export const ModalContent = styled.div`
   position: absolute;
   z-index: 1;
+  min-width: 500px;
   border-radius: ${(props) => props.theme.spacing.lg};
   background-color: ${(props) => props.theme.colors.blue[100]};
   animation: ${(props) => props.theme.animateIn(contentAnimation, 'normal')};
