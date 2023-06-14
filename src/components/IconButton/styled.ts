@@ -9,7 +9,7 @@ export const StyledButton = styled(ButtonBase)`
   background-color: transparent;
 
   &:hover:not(:disabled) {
-    color: ${(props) => props.theme.colors.blue[500]};
-    background-color: rgba(0, 0, 0, 0.175);
+    color: ${(props) => props.theme.colors.blue[600]};
+    background-color: ${(props) => props.theme.colors.blue[200]};
   }
 `;

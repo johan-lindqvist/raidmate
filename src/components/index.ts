@@ -1,8 +1,10 @@
 /* Components */
 export * from './Button';
+export * from './Checkbox';
 export * from './FeatherIcon';
 export * from './IconButton';
-export * from './Modal';
+export * from './Loader';
+export * from './Modal/Modal';
 export * from './Select';
 export * from './TextField';
 export * from './Typography';

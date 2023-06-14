@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { Typography } from 'components';
 
 const overlayAnimation = keyframes`
   0% {
@@ -56,23 +55,4 @@ export const ModalContent = styled.div`
   border-radius: ${(props) => props.theme.spacing.lg};
   background-color: ${(props) => props.theme.colors.blue[100]};
   animation: ${(props) => props.theme.animateIn(contentAnimation, 'normal')};
-`;
-
-export const ModalHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing.xl};
-  border-bottom: 1px solid ${(props) => props.theme.colors.blue[50]};
-`;
-
-export const ModalBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${(props) => props.theme.spacing.lg};
-  padding: ${(props) => props.theme.spacing.xl};
-`;
-
-export const StyledTypography = styled(Typography)`
-  color: ${(props) => props.theme.colors.text[1000]};
 `;
