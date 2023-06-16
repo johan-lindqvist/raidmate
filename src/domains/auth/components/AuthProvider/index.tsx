@@ -1,8 +1,10 @@
 import { createContext, useCallback, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import { AuthContext as Context, AuthProviderProps } from './types';
+import { routes } from 'app-constants';
 import { useConfig } from 'domains/config';
+
+import { AuthContext as Context, AuthProviderProps } from './types';
 
 export const AuthContext = createContext<Context | null>(null);
 
@@ -19,7 +21,7 @@ export function AuthProvider(props: AuthProviderProps) {
   const codeParam = searchParams.get('code');
   const stateParam = searchParams.get('state');
 
-  const navigateToLogin = useCallback(() => navigate('/login', { replace: true }), [navigate]);
+  const navigateToLogin = useCallback(() => navigate(routes.login, { replace: true }), [navigate]);
 
   const request = useCallback(
     async (code: string) => {

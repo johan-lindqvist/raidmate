@@ -1,11 +1,14 @@
 import { AuthProvider } from 'domains/auth';
 
 import { Layout } from './Layout';
+import { MockProvider } from 'domains/mock';
 
 export function Root() {
   return (
     <AuthProvider>
-      <Layout />
+      <MockProvider>
+        <Layout />
+      </MockProvider>
     </AuthProvider>
   );
 }

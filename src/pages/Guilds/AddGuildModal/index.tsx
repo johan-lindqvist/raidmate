@@ -1,15 +1,16 @@
 import { ChangeEvent, useState } from 'react';
 
 import { realms, regions } from 'app-constants';
-import { Button, FeatherIcon, Modal, Select, TextField } from 'components';
+import { Button, FeatherIcon, Modal, Select, TextField, ModalBody, ModalFooter, ModalHeader } from 'components';
+import { useMock } from 'domains/mock/hooks';
 
 import { Guild } from './Guild';
-import { AddGuildModalProps } from './types.ts';
 import { Row, Item } from './styled.ts';
-import { ModalBody, ModalFooter, ModalHeader } from '../../../components/Modal';
+import { AddGuildModalProps } from './types.ts';
 
 export function AddGuildModal(props: AddGuildModalProps) {
   const { show, onClose } = props;
+  const { onboard } = useMock();
 
   const [selectedRegionId, setSelectedRegionId] = useState('');
   const [selectedServerId, setSelectedServerId] = useState('');
@@ -107,7 +108,7 @@ export function AddGuildModal(props: AddGuildModalProps) {
           </Button>
         }
         submitButton={
-          <Button primary disabled={!isGuildChecked}>
+          <Button primary disabled={!isGuildChecked} onClick={onboard}>
             Add guild
           </Button>
         }
