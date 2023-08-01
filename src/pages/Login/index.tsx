@@ -1,22 +1,20 @@
-import { useConfig } from 'domains/config';
+import { Auth } from 'aws-amplify';
 
-import { Background, BattlenetLink, Container } from './styled';
+import { Button } from 'components';
+
+import { Background, Container } from './styled';
 
 export function LoginPage() {
-  const { blizzard } = useConfig();
-
-  const blizzardUrl = new URL(blizzard.oauthUrl);
-
-  blizzardUrl.searchParams.append('state', blizzard.state);
-  blizzardUrl.searchParams.append('scope', blizzard.scope);
-  blizzardUrl.searchParams.append('client_id', blizzard.clientId);
-  blizzardUrl.searchParams.append('redirect_uri', blizzard.redirectUri);
-  blizzardUrl.searchParams.append('response_type', blizzard.responseType);
+  const handleLogin = () => {
+    Auth.federatedSignIn({ customProvider: 'Blizzard' });
+  };
 
   return (
     <Background>
       <Container>
-        <BattlenetLink href={blizzardUrl.toString()}>Log in with Battle.Net</BattlenetLink>
+        <Button appearance="battlenet" onClick={handleLogin}>
+          Log in with Battle.Net
+        </Button>
       </Container>
     </Background>
   );

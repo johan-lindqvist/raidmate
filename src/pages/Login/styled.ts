@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Button } from 'components';
+
 export const Background = styled.div`
   width: 100%;
   height: 100%;
@@ -19,7 +21,7 @@ export const Container = styled.div`
   gap: ${(props) => props.theme.spacing.xl};
 `;
 
-export const BattlenetLink = styled.a`
+export const LoginButton = styled(Button)`
   text-decoration: none;
   outline: none;
 

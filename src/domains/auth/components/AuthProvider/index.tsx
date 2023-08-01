@@ -38,17 +38,17 @@ export function AuthProvider(props: AuthProviderProps) {
       codeRef.current = codeParam;
       stateRef.current = stateParam;
 
-      if (config.blizzard.state !== stateRef.current) {
-        return navigateToLogin();
-      }
+      // if (config.blizzard.state !== stateRef.current) {
+      //   return navigateToLogin();
+      // }
 
       request(codeParam);
       setSearchParams();
     }
 
-    if ((!codeParam && !codeRef.current) || (!stateParam && !stateRef.current)) {
-      return navigateToLogin();
-    }
+    // if ((!codeParam && !codeRef.current) || (!stateParam && !stateRef.current)) {
+    //   return navigateToLogin();
+    // }
   }, [navigateToLogin, setSearchParams, stateParam, codeParam, config, request]);
 
   const value: Context = { code: codeRef.current };

@@ -63,3 +63,30 @@ export const SecondaryButton = styled(ButtonBase)`
     border: 2px solid ${(props) => props.theme.colors.blue[200]};
   }
 `;
+
+export const BattleNetButton = styled(ButtonBase)`
+  text-decoration: none;
+  outline: none;
+
+  color: ${(props) => props.theme.colors.text[1000]};
+  font-size: ${(props) => props.theme.fontSize.paragraph};
+  font-weight: ${(props) => props.theme.fontWeight.bold};
+
+  padding: ${(props) => props.theme.spacing.lg};
+
+  border-radius: ${(props) => props.theme.spacing.md};
+  border: 2px solid ${(props) => props.theme.colors.battlenet.blue};
+  background-color: ${(props) => props.theme.colors.battlenet.blue};
+
+  &:hover:not(:disabled) {
+    border: 2px solid ${(props) => props.theme.colors.battlenet.blueLight};
+  }
+
+  &:active:not(:disabled) {
+    background-color: ${(props) => props.theme.colors.battlenet.blueDark};
+  }
+
+  &:focus:not(:disabled) {
+    outline: 2px solid transparent;
+  }
+`;

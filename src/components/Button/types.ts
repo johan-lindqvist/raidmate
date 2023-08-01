@@ -4,5 +4,5 @@ import { ComponentProps } from '../types';
 
 export interface ButtonProps extends ComponentProps<'button'> {
   children: ReactNode;
-  primary?: boolean;
+  appearance?: 'primary' | 'secondary' | 'battlenet';
 }
