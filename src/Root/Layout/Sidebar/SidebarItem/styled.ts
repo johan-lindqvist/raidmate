@@ -3,6 +3,9 @@ import styled, { css } from 'styled-components';
 import { ItemProps } from './types';
 
 export const ItemActiveBorder = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 2px;
   height: 60px;
   transform: translateX(-100%);
@@ -31,6 +34,7 @@ export const ItemLabel = styled.div`
 `;
 
 export const Item = styled.div<ItemProps>`
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;

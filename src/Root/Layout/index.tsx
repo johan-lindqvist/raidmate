@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
 import { routes } from 'app-constants';
-import { useMock } from 'domains/mock/hooks';
+import { useMock } from 'domains/mock';
 
 import { Topbar } from './Topbar';
 import { Sidebar } from './Sidebar';

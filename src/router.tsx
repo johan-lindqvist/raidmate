@@ -9,9 +9,9 @@ import { LootSheetsPage } from 'pages/LootSheets';
 import { SettingsPage } from 'pages/Settings';
 import { GuildsPage } from 'pages/Guilds';
 import { LoginBlizzardPage } from 'pages/LoginBlizzard';
+import { LogoutPage } from 'pages/Logout';
 
 import { Root } from './Root';
-import { LogoutPage } from 'pages/Logout';
 
 export const router = createBrowserRouter([
   {

@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react';
 
 import { realms, regions } from 'app-constants';
 import { Button, FeatherIcon, Modal, Select, TextField, ModalBody, ModalFooter, ModalHeader } from 'components';
-import { useMock } from 'domains/mock/hooks';
+import { useMock } from 'domains/mock';
 
 import { Guild } from './Guild';
 import { Row, Item } from './styled.ts';

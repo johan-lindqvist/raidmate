@@ -80,4 +80,6 @@ export const theme = {
 
 export type WowColorKey = keyof RaidmateTheme['colors']['wow'];
 
+export type SpacingKey = keyof RaidmateTheme['spacing'];
+
 export type RaidmateTheme = typeof theme;

@@ -36,4 +36,5 @@ export const ItemsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacing.md};
+  width: 100%;
 `;
